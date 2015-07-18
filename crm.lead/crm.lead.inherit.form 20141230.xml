@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<data><xpath expr="//group[@name='categorization']" position="attributes">
+                    <attribute name="string">Marketing</attribute>
+                    <attribute name="groups"/>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="campaign_id"/>
+                    <field name="medium_id"/>
+                </xpath>
+				<xpath expr="//field[@name='probability']" position="after">
+                    <field name="source_id" string="客户需求来源" required="1"/>
+                </xpath>
+            </data>

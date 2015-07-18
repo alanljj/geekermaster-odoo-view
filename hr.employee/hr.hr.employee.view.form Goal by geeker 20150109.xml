@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<xpath expr="//page[@string='Public Information']" position="after">
+    <page string="Goals">
+        <field name="goal_ids" widget="many2many_kanban"/>
+    </page>
+</xpath>

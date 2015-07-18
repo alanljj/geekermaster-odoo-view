@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tree string="Contacts">
+                    <field name="name"/>
+                    <field name="display_name" invisible="1"/>
+                    <field name="parent_id" string="公司"/>					
+                    <field name="function" />
+                    <field name="phone" invisible="1"/>
+                    <field name="mobile"/>					
+                    <field name="email"/>
+                    <field name="user_id" invisible="1"/>
+                    <field name="is_company" invisible="1"/>
+                    <field name="country_id" invisible="1"/>
+</tree>
+            

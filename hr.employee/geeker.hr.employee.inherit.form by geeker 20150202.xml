@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<data><field name="country_id" position="before">
+					<field name="staffno" placeholder="以加入公司时间先后排序"/>
+					<field name="onboard" string="入职时间"/>
+					<field name="leftdate" string="离职时间"/>
+					<field name="perioddays" string="在职天数"/>					
+					
+				</field>
+				<xpath expr="//field[@name='work_phone']" position="after">
+				<label for="telext" class="oe_edit_only"/>
+				<field name="telext"/>
+				</xpath>
+				<xpath expr="//field[@name='address_home_id']" position="after">
+				<field name="hometown_address" placeholder="身份证上住址或老家地址"/>
+				<field name="mobile_phone"/>
+				<field name="mobile1" placeholder="手机或电话"/>
+				<field name="mobile2" attrs="{'invisible': [('mobile1','=', False)]}"/>
+				<field name="personal_email1" widget="email"/>
+				<field name="personal_email2" widget="email" attrs="{'invisible': [('personal_email1','=', False)]}"/>
+				<field name="personal_email3" widget="email" attrs="{'invisible': [('personal_email2','=', False)]}"/>					
+				<field name="wechat" string="微信"/>
+				<field name="qq"/>
+				<field name="skype"/>
+				<field name="im"/>
+				<field name="linkedin" widget="url"/>
+				</xpath>
+				<xpath expr="//field[@name='bank_account_id']" position="after">
+				<field name="bankinfo1" placeholder="请提供招商银行账号"/>
+				<field name="bankaccount1" placeholder="银行账号"/>
+				<field name="bankinfo2"/>
+				<field name="bankaccount2"/>				
+				<field name="sbaccount"/>
+				<field name="gjjaccount"/>
+				</xpath>
+				<xpath expr="//field[@name='gender']" position="before">
+				<field name="chinese_name"/>
+				</xpath>
+				<xpath expr="//field[@name='marital']" position="after">
+				<field name="nation" string="民族"/>
+				</xpath>	
+				<xpath expr="//field[@name='birthday']" position="after">
+				<group string="紧急联络人" colspan="2" col="2">
+				<field name="emergency_contact"/>
+				<field name="emg_relationship"/>
+				<field name="emg_address"/>
+				<field name="emg_phone1"/>
+				<field name="emg_phone2" attrs="{'invisible': [('emg_phone1','=', False)]}"/>
+				</group>
+				<page string="other Information">
+				<field name="remark" colspan="4"/>
+				</page>
+				</xpath>	
+
+            </data>

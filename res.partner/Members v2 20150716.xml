@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<tree string="Members">
+                    <field name="name"/>
+                    <field name="parent_id"/>
+                    <field name="function"/>
+                    <field name="mobile"/>
+                    <field name="email"/>
+                    <field name="category_id"/>
+                    <field name="create_uid"/>                    
+                    <field name="associate_member" invisible="1"/>
+                    <field name="membership_start" invisible="1"/>
+                    <field name="membership_stop" invisible="1"/>
+                    <field name="user_id" invisible="0"/>
+                    <field name="membership_state"/>                    
+                </tree>
+            

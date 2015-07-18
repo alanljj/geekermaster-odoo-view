@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<data>
+                    <xpath expr="//div[@name='button_box']" position="inside">
+                        <button name="652" class="oe_stat_button" icon="fa-book" type="action" groups="base.group_hr_manager">
+                            <field name="contracts_count" widget="statinfo" string="Contracts"/>
+                        </button>
+                    </xpath>
+                    <xpath expr="//field[@name='coach_id']" position="after">
+                        <field name="manager"/>
+                    </xpath>
+                    <xpath expr="//group[@name='active_group']" position="before">
+                        <group string="Contract">
+                            <field name="medic_exam" string="Medical Exam"/>
+                            <field name="vehicle"/>
+                            <field name="vehicle_distance"/>
+                        </group>
+                    </xpath>
+                    <field name="marital" position="after">
+                        <field name="children"/>
+                    </field>
+                    <field name="birthday" position="after">
+                        <field name="place_of_birth"/>
+                    </field>
+                    <field name="bank_account_id" position="replace">
+                        <field name="bank_account_id" context="{'display_partner':True}"/>
+                    </field>
+                </data>
+            

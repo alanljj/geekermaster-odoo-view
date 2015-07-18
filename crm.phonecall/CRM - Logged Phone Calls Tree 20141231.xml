@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<tree string="Phone Calls" editable="top">
+                <field name="date"/>
+                <field name="categ_id" widget="selection" domain="[('object_id.model', '=', 'crm.phonecall')]" string="沟通方式" required="1"/>				
+                <field name="name" string="沟通目的(字数有限制，简洁扼要)" required="1"/>
+                <field name="opportunity_id" on_change="on_change_opportunity(opportunity_id)" string="相关线索/商机"/>				
+                <field name="partner_id" on_change="on_change_partner_id(partner_id)" required="1"/>
+                <field name="partner_mobile" />				
+                <field name="partner_phone" />
+                <field name="user_id" context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'base.group_sale_salesman_all_leads']}"/>
+                <field name="state" invisible="1"/>
+                <field name="create_date" invisible="1"/>
+                <button string="Schedule Other Call" icon="terp-call-start" name="128" type="action"/>
+                <button string="Meeting" icon="gtk-redo" name="action_make_meeting" type="object"/>
+                <button string="Convert to Opportunity" name="action_button_convert2opportunity" states="open,pending" icon="gtk-index" type="object" attrs="{'invisible':[('opportunity_id','!=',False)]}"/>
+</tree>

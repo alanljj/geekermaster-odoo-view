@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<form string="Project">
+                    <header>
+                        <field name="stage_id" widget="statusbar" clickable="True" options="{'fold_field': 'fold'}"/>
+                    </header>
+                    <sheet string="Task">
+                    <div class="oe_right">
+                        <field name="kanban_state" class="oe_inline" widget="kanban_state_selection"/>
+                    </div>
+                    <h1>
+                        <field name="name" placeholder="tips:请输入完整的职位名称" class="oe_inline"/>
+                    </h1>
+                    <group>
+						<group colspan="4">
+							<field name="categ_ids" string="标签" widget="many2many_tags" placeholder="搜索候选人时使用的关键词，比如data moduling, Java, iOS etc...." required="1"/>
+						</group>
+                        <group>
+                            <field name="project_id" string="隶属项目" required="1" domain="[('state','not in', ('close', 'cancelled'))]" on_change="onchange_project(project_id)" context="{'default_use_tasks':1}"/>
+							<field name="partner_id" string="客户名称" placeholder="稍等会自动出现" domain="[('is_company', '=', True)]" required="1"/>
+							<field name="manager_id" string="隶属项目的经理" required="1"> </field>
+							<field name="user_id" string="职位操作顾问" options="{&quot;no_open&quot;: True}" context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'project.group_project_user']}"/>
+                            <field name="reviewer_id" options="{&quot;no_open&quot;: True}" context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'project.group_project_user']}"/>
+                            <field name="planned_hours" widget="float_time" groups="project.group_time_work_estimation_tasks" on_change="onchange_planned(planned_hours, effective_hours)"/>
+							<field name="create_date"> </field>
+							<field name="write_date" string="最近更新日期"> </field>	
+							<field name="date_last_stage_update" groups="base.group_no_one" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="priority" groups="base.group_user" widget="priority"/>
+							<field name="progress" widget="progressbar" groups="project.group_time_work_estimation_tasks"/>
+							<field name="date_deadline" required="1"/>
+                        </group>
+                    </group>
+					<notebook colspan="4" col="4">
+						<page name="shortlisted_candidate_list" string="已推荐候选人">
+							<field name="shortlisted" domain="[('is_company', '=', False)]"/>
+						</page>
+						<page name="longlist_candidate" string="目标候选人">
+							<field name="longlist" domain="[('is_company', '=', False)]"/>
+						</page>
+						<page name="target_company" string="目标公司">
+							<field name="targetcompany" domain="[('is_company', '=', True)]"/>
+						</page>
+						<page name="interviewer" string="面试官们">
+							<field name="interviewer" domain="[('is_company', '=', False)]"/>
+						</page>
+					</notebook>  
+                    <notebook>
+                        <page name="nap" string="NAP">
+                            <field name="description" placeholder="Include Selling Point, Salary Structure, Interview Process, Org Chart and Email Template etc..."/>
+                            <field name="work_ids" groups="project.group_tasks_work_on_tasks">
+                                <tree string="Task Work" editable="top">
+                                    <field name="name"/>
+                                    <field name="hours" widget="float_time" sum="Spent Hours"/>
+                                    <field name="date"/>
+                                    <field name="user_id" context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'project.group_project_user']}"/>
+                                </tree>
+                            </field>
+                            <group>
+                             <group class="oe_subtotal_footer oe_right" name="project_hours" groups="project.group_time_work_estimation_tasks">
+                                <field name="effective_hours" widget="float_time"/>
+                                <label for="remaining_hours" string="Remaining" groups="project.group_time_work_estimation_tasks"/>
+                                <div>
+                                    <field name="remaining_hours" widget="float_time" groups="project.group_time_work_estimation_tasks"/>
+                                </div>
+                                <field name="total_hours" widget="float_time" class="oe_subtotal_footer_separator"/>
+                             </group>
+                            </group>
+                            <div class="oe_clear"/>
+                        </page>
+                        <page string="Delegation" groups="project.group_delegate_task">
+                            <button name="248" string="Delegate" type="action" groups="project.group_delegate_task"/>
+                            <separator string="Parent Tasks"/>
+                            <field name="parent_ids"/>
+                            <separator string="Delegated tasks"/>
+                            <field name="child_ids">
+                                <tree string="Delegated tasks">
+                                    <field name="name"/>
+                                    <field name="user_id"/>
+                                    <field name="stage_id"/>
+                                    <field name="effective_hours" widget="float_time"/>
+                                    <field name="progress" widget="progressbar"/>
+                                    <field name="remaining_hours" widget="float_time"/>
+                                    <field name="date_deadline"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Extra Info">
+                            <group col="4">
+                                
+                                <field name="sequence"/>
+                                <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                            </group>
+                            <group>
+                                <group string="Gantt View">
+                                    <field name="date_start"/>
+                                    <field name="date_end"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            

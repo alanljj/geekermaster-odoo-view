@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<tree string="Contacts">
+                    <field name="category_id" position="after"/>
+                    <field name="membership_state" string="状态" invisible="1"/>
+                    <field name="create_date" string="创建时间" invisible="0"/>
+                    <field name="write_date" string="更新时间" invisible="0"/>
+                </tree>

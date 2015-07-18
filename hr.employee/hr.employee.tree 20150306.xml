@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tree string="Employees">
+                    <field name="name"/>
+                    <field name="job_id"/>					
+                    <field name="work_phone"/>
+                    <field name="mobile_phone"/>					
+                    <field name="work_email"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="department_id"/>
+                    <field name="parent_id"/>
+                    <field name="coach_id" invisible="1"/>
+                    <field name="place_of_birth"/>					
+                </tree>
+            

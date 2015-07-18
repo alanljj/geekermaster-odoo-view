@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<data><field name="email" position="after">
+					<field name="email2" widget="email" attrs="{'invisible': [('email','=', False)]}"/>
+                    <field name="qq" attrs="{'invisible': [('is_company','=', True)]}"/>
+					<field name="skype" attrs="{'invisible': [('is_company','=', True)]}"/>
+					<field name="linkedin" placeholder="e.g. cn.linkedin.com/in/alanluo/" widget="url" attrs="{'invisible': [('is_company','=', True)]}"/>
+                    <field name="hq" attrs="{'invisible': [('is_company','=', False)]}"/>
+					<field name="size" placeholder="公司人数及分布等" attrs="{'invisible': [('is_company','=', False)]}"/>	
+				</field>
+				<xpath expr="//field[@name='title']" position="before">
+                 <field name="joindate" attrs="{'invisible': [('is_company','=', True)]}"/>
+                 <field name="dob" placeholder="年龄或生日" attrs="{'invisible': [('is_company','=', True)]}"/>				 
+				 <field name="cotype" attrs="{'invisible': [('is_company','=', False)]}"/>
+				</xpath>
+				<xpath expr="//field[@name='website']" position="after">
+				 <group colspan="2" col="2">
+				 <field name="hometown" attrs="{'invisible': [('is_company','=', True)]}"/>				 
+				 <field name="nationality" attrs="{'invisible': [('is_company','=', True)]}"/>
+				 </group>
+				 <group colspan="2" col="2" string="语言能力" attrs="{'invisible': [('is_company','=', True)]}">
+				 	<field name="language1" attrs="{'invisible': [('is_company','=', True)]}"/>
+					<field name="languagelevel1" attrs="{'invisible': [('language1','=', False)]}"/>
+					<field name="language2" attrs="{'invisible': [('languagelevel1','=', False)]}"/>
+					<field name="languagelevel2" attrs="{'invisible': [('language2','=', False)]}"/>
+				 </group>
+				 <group colspan="2" col="2" string="Consultant Report" attrs="{'invisible': [('is_company','=', True)]}">
+					<field name="salary" attrs="{'invisible': [('is_company','=', True)]}"/>
+					<field name="career" attrs="{'invisible': [('is_company','=', True)]}"/>
+				</group>
+				</xpath>
+				<xpath expr="//field[@name='linkedin']" position="after">
+				<group colspan="2" col="2" string="教育信息" attrs="{'invisible': [('is_company','=', True)]}">
+					<field name="degree1" attrs="{'invisible': [('is_company','=', True)]}"/>
+					<field name="major1"/>
+                	<field name="school1" placeholder="学校名称"/>	
+					<field name="degree2" attrs="{'invisible': [('school1','=', False)]}"/>
+					<field name="major2" attrs="{'invisible': [('school1','=', False)]}"/>
+                	<field name="school2" placeholder="学校名称" attrs="{'invisible': [('school1','=', False)]}"/>	
+					<field name="certificate1" placeholder="专业技能证书" attrs="{'invisible': [('is_company','=', True)]}"/>
+					<field name="certificate2" attrs="{'invisible': [('certificate1','=', False)]}"/>
+                	<field name="certificate3" attrs="{'invisible': [('certificate2','=', False)]}"/>					
+				</group>
+				<group colspan="2" col="2" string="工作经历" attrs="{'invisible': [('is_company','=', True)]}">
+					<field name="company1" domain="[('is_company', '=', True)]" attrs="{'invisible': [('is_company','=', True)]}"/>
+					<field name="position1" attrs="{'invisible': [('is_company','=', True)]}"/>
+					<field name="company2" domain="[('is_company', '=', True)]" attrs="{'invisible': [('company1','=', False)]}"/>
+					<field name="position2" attrs="{'invisible': [('company2','=', False)]}"/>						
+				</group>	
+				</xpath>
+                <xpath expr="//page[@name='internal_notes']" position="before">
+                  <page name="full_cv" string="完整简历" attrs="{'invisible': [('is_company','=', True)]}">
+				  <field name="cv" attrs="{'invisible': [('is_company','=', True)]}"/>
+				  </page>
+				  <page name="full_cv" string="公司介绍" attrs="{'invisible': [('is_company','=', False)]}">
+				  <field name="introduction" attrs="{'invisible': [('is_company','=', False)]}"/>
+				   </page>
+                </xpath>
+            </data>

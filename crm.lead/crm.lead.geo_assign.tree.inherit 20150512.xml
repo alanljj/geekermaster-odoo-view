@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<field name="partner_id" position="after">
+                    <field name="partner_assigned_id" invisible="1"/>
+                    <field name="date_assign" invisible="1"/>
+                 </field>
+            

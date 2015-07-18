@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<data><field name="priority" position="before">
+                    <field name="jobtype" required="1"/>
+					<field name="joblocation" required="1"/>
+					<field name="reportline" string="该职位汇报对象" placeholder="该职位的直接汇报对象" domain="[('is_company', '=', False)]"/>
+				</field>
+
+				<xpath expr="//field[@name='reviewer_id']" position="after">
+					<field name="successfulcdd" domain="[('is_company', '=', False)]"/>
+				</xpath>
+
+                <xpath expr="//page[@name='nap']" position="after">
+                  <page name="job_description" string="职位描述">
+				  <field name="jd"/>
+				  </page>
+                </xpath>
+            </data>

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+	<field name="name" position="before">
+				<field name="staffno"/>
+	</field>
