@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<search string="Tasks">
+                    <field name="name" string="职位名称"/>
+                    <field name="categ_ids" string="职位标签"/>
+                    <field name="user_id" string="操作顾问"/>                    
+                    <field name="partner_id" string="猎头客户"/>
+                    <field name="project_id" string="猎头项目"/>
+                    <field name="reviewer_id" invisible="True"/>
+                    <field name="stage_id" string="进展阶段"/>
+                    <filter string="My Tasks" domain="[('user_id','=',uid)]"/>
+                    <filter string="Unassigned" name="unassigned" domain="[('user_id', '=', False)]"/>
+                    <separator/>
+                    <filter string="New" name="draft" domain="[('stage_id.sequence', '&lt;=', 1)]"/>
+                    <separator/>
+                    <filter string="New Mail" name="message_unread" domain="[('message_unread','=',True)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Project" name="project" context="{'group_by':'project_id'}"/>
+                        <filter string="Task" context="{'group_by':'name'}"/>
+                        <filter string="Assigned to" name="User" context="{'group_by':'user_id'}"/>
+                        <filter string="Stage" name="Stage" context="{'group_by':'stage_id'}"/>
+                        <filter string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                        <separator/>
+                        <filter string="Last Message" name="group_message_last_post" context="{'group_by':'message_last_post:week'}"/>
+                        <filter string="Assignation Month" context="{'group_by':'date_start:month'}" help="Creation Date"/>
+                    </group>
+                </search>
+            
