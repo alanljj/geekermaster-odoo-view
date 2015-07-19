@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<field name="category_id" position="after">
+                    <field name="function" string="职位" filter_domain="[('function','ilike', self)]"/>
+                    <field name="mobile" string="手机" filter_domain="[('mobile','ilike', self)]"/>
+<separator/>
+                    <field name="create_date" string="创建时间" filter_domain="[('create_date', '>=', self)]"/>
+                    <field name="create_uid" string="创建者" domain="[]" context="{'group_by':'user_id'}"/>
+                    <field name="state_id" string="城市" filter_domain="[('state_id.name','ilike', self)]"/>
+                </field>
+            
