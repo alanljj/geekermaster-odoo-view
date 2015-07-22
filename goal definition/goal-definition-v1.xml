@@ -1,0 +1,19 @@
+# Candidate Report（SO）@Knowleadge
+
+[('user_id','=',user.id),('type','=','binary'),('res_model', '=', 'project.task'),'|',('datas_fname', 'ilike', 'Candidate Report'),('datas_fname', 'ilike', u'\u5019\u9009\u4eba\u62a5\u544a')]
+
+
+# CV input @res.partner
+
+[('user_id','=',user.id),('is_company','=', False)]
+
+[('create_uid','=',user.id),('is_company','=', False)]
+[('create_uid','=','user.id'),('is_company','=', False)]
+
+
+#Number of interviews @res.partner
+
+[('create_uid','=',user.id),'|','|',('partner_state','=', '1st'),('partner_state','=', '2nd'),('partner_state','=', '3rd')]
+
+# Offer @res.partner
+[('create_uid','=',user.id),('partner_state','=', 'offer')]
