@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<search string="Search Phonecalls">
+                <field name="name" string="Phonecalls"/>
+                <field name="date"/>
+                <field name="state"/>
+                <filter string="My Phonecalls" domain="[('user_id', '=', uid)]"/>
+                <filter string="My Team" domain="[('section_id.user_id', '=', uid)]"/>
+                <filter string="Unassigned" domain="[('user_id','=',False)]"/>
+                <separator/>
+                <filter string="To Do" name="current" domain="[('state','=','open')]"/>
+                <separator/>
+                <filter string="New Mail" name="message_unread" domain="[('message_unread','=',True)]"/>
+                <separator/>
+                <field name="partner_id" operator="child_of"/>
+                <field name="user_id"/>
+                <field name="opportunity_id"/>
+                <field name="section_id" string="Sales Team" groups="base.group_multi_salesteams"/>
+                <group expand="0" string="Group By">
+                    <filter string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                    <filter string="Responsible" domain="[]" context="{'group_by':'user_id'}"/>
+                    <filter string="Creation" help="Creation Date" domain="[]" context="{'group_by':'create_date'}"/>
+                    <filter string="Month" domain="[]" context="{'group_by':'date'}" help="Calls Date by Month"/>
+                </group>
+            </search>
+        

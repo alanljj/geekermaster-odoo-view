@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<search string="Search Opportunities">
+                    <field name="name" string="Opportunity" filter_domain="['|','|','|',('partner_id','ilike',self),('partner_name','ilike',self),('email_from','ilike',self),('name', 'ilike', self)]"/>
+                    <field name="categ_ids" string="Tag" filter_domain="[('categ_ids', 'ilike', self)]"/>
+                    <field name="create_date" string="创建日期" filter_domain="[('create_date', '>=', self)]"/>
+                    <field name="section_id" groups="base.group_multi_salesteams"/>
+                    <field name="user_id"/>
+                    <field name="partner_id" operator="child_of"/>
+                    <field name="stage_id" domain="[]"/>
+                    <field name="probability"/>
+                    <separator/>
+                    <filter string="New" name="new" domain="[('probability', '=', 0), ('stage_id.sequence', '&lt;=', 1)]"/>
+                    <filter string="Won" name="won" domain="[('probability', '=', 100), ('stage_id.fold', '=', True)]"/>
+                    <filter string="Lost" name="lost" domain="[('probability', '=', 0), ('stage_id.fold', '=', True)]"/>
+                    <separator/>
+                    <filter string="My Opportunities" name="assigned_to_me" domain="[('user_id', '=', uid)]" help="Opportunities that are assigned to me"/>
+                    <filter string="Unassigned" name="unassigned" domain="[('user_id','=', False)]" help="No salesperson"/>
+                    <separator/>
+                    <filter string="New Mail" name="message_unread" domain="[('message_unread','=',True)]"/>
+                    <group expand="0" string="Group By" colspan="16">
+                        <filter string="Salesperson" context="{'group_by':'user_id'}"/>
+                        <filter string="Sales Team" context="{'group_by':'section_id'}" groups="base.group_multi_salesteams"/>
+                        <filter string="Country" context="{'group_by':'country_id'}"/>
+                        <filter string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                        <filter string="Stage" context="{'group_by':'stage_id'}"/>
+                        <filter string="Campaign" domain="[]" context="{'group_by':'campaign_id'}"/>
+                        <filter string="Channel" domain="[]" context="{'group_by':'medium_id'}"/>
+                        <filter string="Source" domain="[]" context="{'group_by':'source_id'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Creation Month" context="{'group_by':'create_date:month'}" name="month"/>
+                        <filter string="Expected Closing" context="{'group_by':'date_deadline'}"/>
+                    </group>
+                </search>
+            

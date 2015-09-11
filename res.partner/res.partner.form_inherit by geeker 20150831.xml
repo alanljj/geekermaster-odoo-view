@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<data><field name="email" position="after">
+					<field name="email2" widget="email" invisible="1"/>
+                    <field name="qq" widget="qq" attrs="{'invisible': [('is_company','=', True)]}"/>
+					 <field name="skype" widget="skype" attrs="{'invisible': [('is_company','=', True)]}"/>
+					<field name="linkedin" placeholder="e.g. cn.linkedin.com/in/alanluo/" widget="url" attrs="{'invisible': [('is_company','=', True)]}"/>
+                    <field name="hq" attrs="{'invisible': [('is_company','=', False)]}"/>
+					<field name="size" placeholder="公司人数及分布等" attrs="{'invisible': [('is_company','=', False)]}"/>	
+				</field>
+				<xpath expr="//field[@name='function']" position="after">
+                     <field name="department" attrs="{'invisible': [('is_company','=', True)]}"/>
+                 <field name="joindate" attrs="{'invisible': [('is_company','=', True)]}"/>
+ 				 <field name="cotype" attrs="{'invisible': [('is_company','=', False)]}"/>
+				</xpath>
+					<xpath expr="//field[@name='website']" position="before">
+				<field name="hometown" placeholder="打哪来?" style="width: 78%" attrs="{'invisible': [('is_company','=', True)]}"/>
+				</xpath>
+<xpath expr="//field[@name='website']" position="after">
+				 <group colspan="2" col="2">
+				 <field name="dob" placeholder="年龄或生日" attrs="{'invisible': [('is_company','=', True)]}"/>	
+				 </group>
+</xpath>
+                <xpath expr="//page[@name='internal_notes']" position="before">
+                  <page name="full_cv" string="完整简历" attrs="{'invisible': [('is_company','=', True)]}">
+				  	<div>
+                  		<label for="cv" string="提示：直接粘贴简历内容,可以从Word, PDF, Linkedin,猎聘网,或者智联网等网站直接拷贝。命令： Ctrl+A, Ctrl+C, then Ctrl+V"/>
+                  	</div>
+				  			<field name="cv" placeholder="直接粘贴简历内容,可以从Word, PDF, Linkedin,猎聘网,或者智联网等网站直接拷贝。命令： Ctrl+A, Ctrl+C, then Ctrl+V" attrs="{'invisible': [('is_company','=', True)]}"/>
+						<group>					
+							<field name="salary" string="薪资状况" placeholder="目前的收入" attrs="{'invisible': [('is_company','=', True)]}"/>
+							<field name="career" string="求职意向" placeholder="想找什么工作，有什么想法 CLAMPS" attrs="{'invisible': [('is_company','=', True)]}"/>
+							<field name="comment" string="顾问备注" placeholder="Put an internal note..."/>
+						</group>
+				  
+				  </page>
+
+				  <page name="full_cv" string="公司介绍" attrs="{'invisible': [('is_company','=', False)]}">
+					<field name="introduction" attrs="{'invisible': [('is_company','=', False)]}"/>
+					<group>
+							<field name="comment" string="顾问备注" placeholder="Put an internal note..."/>
+					</group>
+				   </page>
+                </xpath>
+            </data>
