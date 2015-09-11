@@ -7,19 +7,19 @@
                         <div class="oe_title">
                         <label for="name" class="oe_edit_only"/>
                             <h1>
-                                <field name="name" class="oe_inline"/>
+                                <field name="name" class="oe_inline" placeholder="选择客户后自动生成名称"/>
                             </h1>
                             <div name="project"/>
                         </div>
 
                         <group name="main">
                             <group>
-                                <field name="partner_id" on_change="on_change_partner_id(partner_id, name)"/>
+                                <field name="partner_id" domain="[('is_company', '=', True)]" required="1" on_change="on_change_partner_id(partner_id, name)"/>
                                 <field name="manager_id" context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'account.group_account_manager']}"/>
-<field name="date_start"/>
-                                    <label for="date" string="End Date"/>
+                                    <field name="date_start" string="签字日期" required="1"/>
+                                    <label for="date" string="终止日期"/>
                                     <div name="duration">
-                                        <field name="date" class="oe_inline"/>
+                                        <field name="date" class="oe_inline" required="1"/>
                                     </div>
                                 <field name="currency_id" attrs="{'invisible': ['|',('type', '&lt;&gt;', 'view'), ('company_id', '&lt;&gt;', False)]}"/>
                             </group>
@@ -48,7 +48,9 @@
                                 </group>
                             </page>
 <page string="Terms and Conditions" name="tob" attrs="{'invisible':[('type','not in',['contract', 'template'])]}">
-                                <field name="description" widget="html"/>
+                            <div>请粘贴完整合同的内容
+                            </div>
+                            <field name="description" widget="html"/>
                             </page>
                         </notebook>
                     </sheet>
