@@ -7,9 +7,11 @@
                     <div class="oe_right">
                         <field name="kanban_state" class="oe_inline" widget="kanban_state_selection"/>
                     </div>
+                    <div class="oe_title oe_left">
                     <h1>
-                        <field name="name" placeholder="请输入完整的职位名称" class="oe_inline"/>
+                        <field name="name" placeholder="请输入完整的职位名称" style="width: 250%"/>
                     </h1>
+                </div>
                     <group>
                         <group colspan="4">
                             <field name="categ_ids" string="标签" widget="many2many_tags" placeholder="搜索候选人时使用的关键词，比如data moduling, Java, iOS etc...." required="1"/>
@@ -33,20 +35,8 @@
                         </group>
 
                     </group>
-                    <notebook colspan="4" col="4">
-                        <page name="shortlisted_candidate_list" string="已推荐候选人-不推荐继续使用">
-                           
-                        </page>
-                        <page name="longlist_candidate" string="目标候选人" invisible="True">
-                            <field name="longlist" domain="[('is_company', '=', False)]"/>
-                        </page>
-                        <page name="target_company" string="目标公司" invisible="True">
-                            <field name="targetcompany" domain="[('is_company', '=', True)]"/>
-                        </page>
-                        <page name="interviewer" string="面试官们" invisible="True">
-                            <field name="interviewer" domain="[('is_company', '=', False)]"/>
-                        </page>
-                        <page name="nap" string="NAP需求分析">
+<notebook colspan="4" col="4">
+<page name="nap" string="NAP需求分析">
                             <field name="description" placeholder="Include Selling Point, Salary Structure, Interview Process, Org Chart and Email Template etc..."/>
                             <field name="work_ids" groups="project.group_tasks_work_on_tasks">
                                 <tree string="Task Work" editable="top">

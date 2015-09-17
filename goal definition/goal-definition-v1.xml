@@ -12,8 +12,9 @@
 
 
 #Number of interviews @res.partner
-
 [('create_uid','=',user.id),'|','|',('partner_state','=', '1st'),('partner_state','=', '2nd'),('partner_state','=', '3rd')]
+[('user_id','=',user.id),'|','|','|',('cddstatus','=', '1st'),('cddstatus','=', '2nd'),('cddstatus','=', '3rd'),('cddstatus','=', 'failed')]
+
 
 # Offer @res.partner
 [('create_uid','=',user.id),('partner_state','=', 'offer')]
