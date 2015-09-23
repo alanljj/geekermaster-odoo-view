@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<tree string="Mailing Lists">
+                    <field name="name"/>
+                    <field name="contact_nbr"/>
+                    <field name="create_uid"/>
+                    <field name="create_date"/>
+                    <field name="write_date"/>
+                </tree>
+            
