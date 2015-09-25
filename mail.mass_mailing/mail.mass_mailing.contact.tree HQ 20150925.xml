@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<tree string="Mailing Lists Subscribers" editable="top">
+                    <field name="email"/>
+                    <field name="name"/>
+                    <field name="list_id"/>
+<field name="write_uid" string="更新者" readonly="1"/>	
+                    <field name="opt_out" string="不接收"/>
+                </tree>
+            

@@ -1,0 +1,77 @@
+<div>
+    <font face="Lucida Grande, Helvetica, Verdana, Arial, sans-serif" color="#000000">
+        <span style="font-size: 12px;">
+            <p>${object.name}，您好！</p>
+            
+            <p>我是奇客顾问的猎头${user.name}，专注于IT技术及管理类人才咨询服务。有段时间没和您联系了，最近还好吗？</p>
+            
+            <p>我们目前在与一些全球Top的金融集团合作，为他们招募中高端的Java技术相关人才，第一时间想到您在这个领域非常精专，冒昧给您发邮件询问近期是否可以Open看一些机会？</p>
+            
+            <p>如果您感兴趣，烦请回复您最新的简历至<a href="mailto:${user.email}" title="Click to send email to Geeker's Recruiter" target="_blank" style="color: #1155cc;">${user.email}</a>，我们会在您方便的时间和您电话沟通职位细节，了解您的需求之后，帮您做更进一步的职业规划。</p>
+            
+            <p>我们会努力成为您最值得信赖的职业规划顾问！期待您的回复，谢谢！</p>
+
+        </span></font></div>
+
+<table style="color: #222222; font-size: 11px; border: 0px; padding: 0px; margin: 0px; width: 517px; border-collapse: collapse; font-family: Helvetica, Arial, sans-serif; background-color: #ffffff;">
+    <tbody>
+            <tr style="padding-bottom: 5px;">
+                <td colspan="2" style="font-family: Helvetica, Arial, sans-serif; margin: 0px;"><img src="http://www.geekerconsulting.com/signature/email-signature-top.gif" alt="" height="15" width="517"></td>
+            </tr>
+
+            <tr>
+                <td style="margin: 0px; padding-left: 10px; width: 342px;">
+                    <div style="color: #000000; font-weight: bold;">${user.name}</div>
+                    <div style="color: #000000; font-weight: normal;">${user.function} of ${user.partner_id.company_id.name}</div>
+                    <div style="min-height: 5px; font-size: 5px;"></div>
+                    <div style="color: #000000; font-size: 11px;">
+                        <span style="font-weight: bold;">电话：&nbsp;</span>${user.phone}<br>
+                            <span style="font-weight: bold;">手机：</span>
+                            % if user.mobile
+                            ${user.mobile}
+                            % endif
+                        </div>
+                    <div style="color: #000000; font-size: 11px;"><span style="font-weight: bold;">邮箱：&nbsp;</span><a href="mailto:${user.email}" title="Click to send email to Geeker's Recruiter" target="_blank" style="color: #1155cc;">${user.email}</a>&nbsp;</div>
+                        
+                </td>
+                <td style="font-family: Helvetica, Arial, sans-serif; margin: 0px; padding-right: 10px; vertical-align: top;">
+                    <div style="text-align: center; width: 150px; min-height: 93px; vertical-align: top;"><a href="http://www.geekerconsulting.com/cn" target="_blank"><img title="GeekerConsulting.com" src="http://www.geekerconsulting.com/signature/geekersignature150x93.jpg" alt="Geeker Consulting Logo" height="93" border="0" width="150"></a></div>
+                     <div style="text-align: center; width: 150px; vertical-align: top; padding: 0px; font-weight: bold; font-size: 11px; color: #252565; font-family: Helvetica, Arial, sans-serif;"><a href="http://www.geekerconsulting.com/cn" target="_blank" style="text-decoration: none;">招聘解决方案提供商</a></div>
+                </td>
+            </tr>
+        <tr>
+
+            <td colspan="2" style="font-family: Helvetica, Arial, sans-serif; margin: 0px; padding-top: 3px; padding-left: 10px;">
+                <div style="font-family: Helvetica, Arial, sans-serif; color: #909090; font-size: 11px; font-weight: bold;"><span style="font-family: Helvetica, Arial, sans-serif;">上海市徐汇区虹桥路333号慧谷中心6B02室</span><br><span style="font-family: Helvetica, Arial, sans-serif;">深圳市福田区华强北路1002号赛格广场4304B室</span><br><br></div>
+                <div style="font-family: Helvetica, Arial, sans-serif; color: #909090; font-size: 11px; font-weight: bold;"><span style="font-family: Helvetica, Arial, sans-serif;"><a href="http://www.geekerconsulting.com/cn" target="_blank" style="text-decoration: none;">www.geekerconsulting.com/cn</a></span></div>
+            </td>
+        </tr>
+
+        <tr style="clear: both;">
+            <td colspan="2" style="font-family: Helvetica, Arial, sans-serif; margin: 0px; padding: 5px 10px;" valign="bottom">
+                <table style="padding: 0px; margin: 0px; width: 510px;" align="right">
+                    <tbody>
+                        <tr style="text-align: right;">
+                            <td style="font-family: Helvetica, Arial, sans-serif; margin: 0px; text-align: left; padding-left: 0px; width: 280px; height: 11px; color: #6e6e6e; font-size: 9px; vertical-align: bottom;"></td>
+                            <td style="margin: 0px;"><span style="font-family: Helvetica, Arial, sans-serif; min-height: 11px; color: #6e6e6e; font-size: 10px; vertical-align: bottom; font-weight: normal;">社交网链接</span></td>
+                            <td style="margin: 0px; width: 18px;"><a href="http://wechat.geekerconsulting.com" target="_blank"><img title="Geeker Wechat Website" src="http://geekerconsulting.com/pic/snspic/wechat_bw15.png" alt="Geeker Wechat Website" height="15" border="0" width="15"></a></td>
+                            <td style="margin: 0px; width: 18px;"><a href="http://weibo.com/geekerconsulting" target="_blank"><img title="Follow Geeker on Weibo" src="http://geekerconsulting.com/pic/snspic/sina_bw15.png" alt="Follow Geeker on Weibo" height="15" border="0" width="15"></a></td>
+                            <td style="margin: 0px; width: 18px;"><a href="http://www.linkedin.com/company/2445407" target="_blank"><img title="Geeker Consulting on LinkedIn" src="http://geekerconsulting.com/pic/snspic/linkedin_bw15.png" alt="Geeker Consulting on LinkedIn" height="15" border="0" width="15"></a></td>
+                            <td style="margin: 0px; width: 18px;"><a href="https://www.facebook.com/pages/Geeker-Consulting/316924225005244" target="_blank"><img title="Following Geeker Consulting" src="http://geekerconsulting.com/pic/snspic/facebook_bw15.png" alt="Following Geeker Consulting" height="15" border="0" width="15"></a></td>
+                            <td style="margin: 0px; width: 18px;"><a href="http://www.linkedin.com/company/2445407" target="_blank"><img title="Circle Geeker Consulting" src="http://geekerconsulting.com/pic/snspic/gplus_bw15.png" alt="Circle Geeker Consulting" height="15" border="0" width="15"></a></td>
+                            <td style="margin: 0px; width: 18px;"><a href="http://feed.feedsky.com/GeekerConsulting" target="_blank"><img title="RSS of Job Openings" src="http://geekerconsulting.com/pic/snspic/rss_bw15.png" alt="RSS of Job Openings" height="15" border="0" width="15"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr style="clear: both;">
+            <td colspan="2" style="font-family: Helvetica, Arial, sans-serif; margin: 0px;">
+                <div style="padding: 0px 10px 3px 5px;"><a href="http://www.geekerconsulting.com/emailsignature" target="_blank"><img title="GeekerConsulting.com" src="http://www.geekerconsulting.com/signature/geekersignature.jpg" alt="Geeker Consulting Signature" height="60" border="0" width="510"></a></div>
+                <div style="padding-left: 5px; padding-right: 12px; font-family: Helvetica, Arial, sans-serif; color: #333333; font-size: 8px;">本电子邮件（包括与之相关的回复和转发邮件）所载或其随附的信息属于保密信息，只供指定接收方使用。如您并非本通信指明的接收方，请将您拥有的本通信及其所有备份（包括所有附件）删除及销毁，以及立即通知发件方您错误的收到了本通信，在此特提请您注意不得阅览或分发本通信，并不得基于本通信而采取任何行动。</div>
+                <div><img src="http://www.geekerconsulting.com/signature/email-signature-bottom.png" alt="" height="15" border="0" width="517"></div>
+            </td>
+        </tr>
+    </tbody>
+</table>
