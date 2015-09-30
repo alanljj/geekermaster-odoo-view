@@ -1,0 +1,231 @@
+<t t-name="sale.report_saleorder_document">
+  <t t-call="report.external_layout">
+    <div class="page">
+      <div class="oe_structure"/>
+      <div class="row">
+<!--        <div class="col-xs-6">
+          <p t-if="o.partner_shipping_id == o.partner_invoice_id">发票寄送地址:</p>
+          <p t-if="o.partner_shipping_id != o.partner_invoice_id">Invoice address: </p>
+          <div t-field="o.partner_invoice_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;, &quot;fax&quot;], &quot;no_marker&quot;: true}"/>
+          <p t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></p>
+          <div t-if="o.partner_shipping_id != o.partner_invoice_id">
+            <p>公司地址:</p>
+            <div t-field="o.partner_shipping_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;, &quot;fax&quot;], &quot;no_marker&quot;: true}"/>
+            <p t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></p>
+          </div>
+        </div>	-->
+        <div class="col-xs-5 pull-right col-xs-offset-1">
+          <div t-field="o.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+        </div>
+      </div>
+      <h2>
+        <span t-if="o.state not in ['draft','sent']">Order N° </span>
+        <span t-if="o.state in ['draft','sent']">预估单/订单号 </span>
+        <span t-field="o.name"/>
+        <strong> - 发票申请</strong>
+      </h2>
+      <div class="row mt32 mb32" id="informations">
+        <div t-if="o.client_order_ref" class="col-xs-3">
+          <strong>发票号:</strong>
+          <p t-field="o.client_order_ref"/>
+        </div>
+        <div t-if="o.date_order" class="col-xs-3">
+          <strong t-if="o.state not in ['draft','sent']">Date Ordered:</strong>
+          <strong t-if="o.state in ['draft','sent']">创建日期:</strong>
+          <p t-field="o.date_order"/>
+        </div>
+        <div t-if="o.user_id.name" class="col-xs-3">
+          <strong>猎头顾问:</strong>
+          <p class="oe_editable" t-field="o.user_id.name"/>
+        </div>
+        <div t-if="o.successfulcdd" class="col-xs-3">
+          <strong>候选人:</strong>
+          <p t-field="o.successfulcdd"/>
+        </div>
+        <div t-if="o.invoice_type_id" class="col-xs-3">
+          <strong>发票类型:</strong>
+          <p t-field="o.invoice_type_id"/>
+        </div>		
+      </div>
+	 
+<!-- <div class="col-xs-8 pull-left">	 -->
+      <table class="table table-condensed">
+	  <thead>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+       
+          <tr>
+            <th>发票抬头</th>
+            <th><p t-field="o.invoicetitle"/></th>
+          </tr>
+               
+          <tr>
+            <th>开票内容</th>
+            <th>
+              <p t-field="o.invoicetxt"/>
+            </th>
+          </tr>
+        
+        
+          <tr>
+            <th>发票金额</th>
+            <th>
+              <p t-field="o.amount_total" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.pricelist_id.currency_id&quot;}"/>
+            </th>
+          </tr>
+        
+        <thead>
+          <tr>
+            <th>收款账户</th>
+            <th>中国银行田林支行</th>
+          </tr>
+        </thead>
+		 </table>
+<!--		</div>   -->
+ <div class="col-xs-6 pull-left">   
+ <table class="table table-condensed"> 
+          <tr>
+            <th>猎头项目</th>
+            <th>
+              <p t-field="o.project"/>
+            </th>
+          </tr>
+        
+        
+          <tr>
+            <th>猎头职位</th>
+            <th>
+              <p t-field="o.jobtitle"/>
+            </th>
+          </tr>
+        
+          <tr>
+            <th>成功候选人</th>
+            <th>
+              <p t-field="o.successfulcdd"/>
+            </th>
+          </tr>
+    
+      
+          <tr>
+            <th>上岗日期</th>
+            <th>
+              <p t-field="o.onboard"/>
+            </th>
+          </tr>
+ 
+      </table>
+	</div>
+<div class="col-xs-6 pull-right">
+<table class="table table-condensed"> 	
+          <tr>
+            <th>Offer薪资</th>
+            <th>
+              <p t-field="o.salary"/>
+            </th>
+          </tr>
+
+          <tr>
+            <th>实际付费薪资</th>
+            <th>
+              <p t-field="o.salarypay"/>
+            </th>
+          </tr>
+		  <tr>
+            <th>服务费率</th>
+            <th>
+              <p t-field="o.pricelist_id"/>
+            </th>
+          </tr>
+          <tr>
+            <th>付款条款</th>
+            <th>
+              <p t-field="o.payment_term"/>
+            </th>
+          </tr>      
+  
+		</table> 
+</div>
+    <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>明细</th>
+                       <th class="text-right"></th>
+                        <th class="text-right">Quantity</th>
+                        
+                        <th groups="sale.group_discount_per_so_line">Disc.(%)</th>
+                        <th class="text-right">Price</th>
+						<th class="text-right">小计</th>
+                    </tr>
+               </thead>
+               <tbody class="sale_tbody">
+                    
+                        <td>
+                           <span t-field="l.product_id"/>
+						   <span t-field="l.name"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="l.product_uom_qty"/>
+                            <span groups="product.group_uom" t-field="l.product_uom"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="l.price_unit"/>
+                        </td>
+                        <td groups="sale.group_discount_per_so_line">
+                            <span t-field="l.discount"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="l.price_subtotal" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.pricelist_id.currency_id&quot;}"/>
+                        </td>
+                    
+                </tbody>
+            </table>
+ <p t-if="o.note">
+<strong>特别说明:</strong>
+<span t-field="o.note"/>
+</p>			
+     
+ <div class="oe_structure">
+	  
+        <table class="table table-bordered table-responsive">
+          <tbody>
+            <tr>
+              <td>​发票号：</td>
+              <td>​</td>
+              <td>​经办人签字/日期：</td>
+              <td>​</td>
+           
+            </tr>
+
+            <tr>
+              <td>​寄出确认：</td>
+              <td>​</td>
+              <td>​经办人签字/日期：</td>
+              <td>​</td>
+       
+            </tr>
+            <tr>
+              <td>​到款日期：</td>
+              <td>​</td>
+              <td>经办人签字/日期​：</td>
+              <td>​</td>
+        
+            </tr>
+            <tr>
+              <td>​到款金额：</td>
+              <td>​</td>
+              <td>​经办人签字/日期：</td>
+              <td>​</td>
+          
+            </tr>
+          </tbody>
+        </table>
+<p>注：①发票联盖发票章后交给申请人寄给客户；②存根联交给罗总；③记账联财务保留。
+</p>        
+      </div>
+    </div>
+  </t>
+</t>
