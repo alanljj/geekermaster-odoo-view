@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<data><field name="partner_invoice_id" position="before">
+                <field name="categ_ids" string="换工作原因" required="1" widget="many2many_tags" help="候选人此次跳槽的主要原因"/>
+                </field>
+                <field name="origin" position="after">
+                    <field name="campaign_id"/>
+                    <field name="medium_id"/>
+                    <field name="source_id"/>
+                </field>
+
+            </data>

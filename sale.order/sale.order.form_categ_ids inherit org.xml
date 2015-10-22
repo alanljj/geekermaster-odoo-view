@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<data><field name="section_id" position="after">
+                    <field name="categ_ids" widget="many2many_tags"/>
+                </field>
+                <field name="origin" position="after">
+                    <field name="campaign_id"/>
+                    <field name="medium_id"/>
+                    <field name="source_id"/>
+                </field>
+
+            </data>
