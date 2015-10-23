@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xpath expr="//page[@string='Public Information']" position="before">
+                    <page string="Received Badges" attrs="{'invisible': [('user_id', '=', False)]}">
+                        <field name="has_badges" invisible="1"/>
+                        <button string="Grant a Badge" type="action" name="417"/> 奖章是您的荣誉，是对您的肯定！
+                        <div class="oe_view_nocontent" attrs="{'invisible': [('has_badges', '=', True)]}">
+                            <p class="oe_view_nocontent_create">
+                                点击此处为此员工获取第一个荣誉奖章。
+                            </p><p class="oe_grey">
+                                Badges are rewards of good work. Give them to people you believe deserve it.
+                            </p>
+                        </div>
+                        <field name="badge_ids" widget="many2many_kanban"/>
+                    </page>
+                </xpath>

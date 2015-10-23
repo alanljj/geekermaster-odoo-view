@@ -23,7 +23,8 @@
                             <field name="phone" placeholder="e.g. +86 21 6428 3925"/>
                             <field name="fax" string="其它电话" invisible="1"/>
                             <field name="user_ids" invisible="1"/>
-                            <field name="email" string="电子邮件" widget="email" attrs="{'required': [('user_ids','!=', [])]}"/>                    
+                            <field name="email" string="电子邮件" widget="email" attrs="{'required': [('user_ids','!=', [])]}"/> 
+                
                         </group>
                         <group>                                               
                             <label for="type" invisible="1"/>
@@ -45,10 +46,11 @@
                                     <field name="city" placeholder="City" style="width: 48%" attrs="{'readonly': [('use_parent_address','=',True)]}" invisible="0"/>
                                     <field name="country_id" placeholder="Country" style="width: 48%" class="oe_no_button" options="{&quot;no_open&quot;: True}" attrs="{'readonly': [('use_parent_address','=',True)]}" invisible="1"/>                                    
                                     <field name="zip" placeholder="ZIP" style="width: 48%" attrs="{'readonly': [('use_parent_address','=',True)]}" invisible="1"/>
+                                    <field name="title" string="性别" placeholder="性别" widget="selection" options="{&quot;no_open&quot;: True}" attrs="{'invisible': [('is_company','=', True)]}" style="width: 32%"/>
                                 </div>
                                 
                             </div>
-<field name="title" string="性别" widget="selection" options="{&quot;no_open&quot;: True}" attrs="{'invisible': [('is_company','=', True)]}" style="width: 52%"/>
+
                             <field name="website" widget="url" placeholder="e.g. www.geekerconsulting.com" attrs="{'invisible': [('is_company','=', False)]}"/>
 
                         </group>
