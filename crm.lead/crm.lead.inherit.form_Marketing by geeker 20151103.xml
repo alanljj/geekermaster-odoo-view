@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<xpath expr="//group[@name='mailings']" position="before">
+                    <group string="Marketing">
+                        <field name="campaign_id"/>
+                        <field name="medium_id"/>
+                        <!-- source_id move it to CRM Opportunities HQ by geeker 20151103 
+                        <field name="source_id"/>
+                        -->  
+                    </group>
+                </xpath>
