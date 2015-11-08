@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<form string="Partner Tag">
+                    <group col="4">
+        <field name="name"/>
+        <field name="complete_name"/>
+        <field name="parent_id"/>
+        <field name="create_uid"/>
+        <field name="create_date" widget="date"/>
+        <field name="write_uid"/>
+        <field name="write_date" widget="date"/>
+        <field name="active"/>
+                    </group>
+</form>
