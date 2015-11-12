@@ -1,0 +1,97 @@
+<div>
+<font face="Lucida Grande, Helvetica, Verdana, Arial, sans-serif" color="#000000">
+<span style="font-size: 12px;">
+
+<!--主题：线索跟踪提醒: ${object.name} by ${object.user_id} -->
+
+<p>${object.user_id}，</p>
+
+<p>奇客大师（GeekerMaster）提醒您这个业务/商机至少有 5 天没有任何活动了。这里有一些信息供您参考：</p>
+
+<ul>
+<li><h3><b>线索/商机名称: ${object.name}</b></h3></li>
+<li>目前阶段: ${object.stage_id}</li>
+<li>成功概率: ${object.probability}</li>
+<li><b>下一动作: ${object.date_action}</b></li>
+<li>计划动作: ${object.title_action}</li>
+
+
+</ul>
+
+<table style="color: #000000; font-size: 11px; border: 0px; padding: 0px; margin: 0px; width: 500px; border-collapse: collapse; font-family: Helvetica, Arial, sans-serif;">
+	<tbody>
+		<tr>
+			<td style="width: 68px; font-weight: bold; background-color: #d1d2d4;">公司：</td>
+			<td>${object.partner_name}</td>
+		</tr>
+
+		<tr>
+			<td style="width: 68px; font-weight: bold; background-color: #d1d2d4;">联系人：</td>
+			<td>${object.partner_id != False and object.partner_id.name or object.contact_name}</td>
+		</tr>
+		<tr>
+			<td style="width: 68px; font-weight: bold; background-color: #d1d2d4;">职位：</td>
+			<td>${object.function}</td>
+		</tr>
+		<tr>
+			<td style="width: 68px; font-weight: bold; background-color: #d1d2d4;">城市：</td>
+			<td>${object.city}</td>
+		</tr>
+		<tr>
+			<td style="width: 68px; font-weight: bold; background-color: #d1d2d4;">创建日期：</td>
+			<td>${object.create_date}</td>
+		</tr>
+		<tr>
+			<td style="width: 68px; font-weight: bold; background-color: #d1d2d4;">更新日期：</td>
+			<td>${object.write_date}</td>
+		</tr>
+
+		<tr>
+			<td style="width: 68px; font-weight: bold; background-color: #d1d2d4;">客户来源：</td>
+			<td>${object.source_id.name}</td>
+		</tr>
+		<tr>
+			<td style="width: 68px; font-weight: bold; background-color: #d1d2d4;">部门/团队：</td>
+			<td>${object.section_id.name}</td>
+		</tr>
+		<tr>
+			<td style="width: 68px; font-weight: bold; background-color: #d1d2d4;">详细描述：</td>
+			<td>${object.description}</td>
+		</tr>
+		<tr>
+			<td style="width: 68px; font-weight: bold; background-color: #d1d2d4;">未读信息：</td>
+			<td>${object.message_unread}</td>
+		</tr>	
+
+		</tr>	
+	</tbody>
+</table>
+
+<p>跟踪客户是一件费时费力的工作，如果有一份有效的邮件跟进列表，会让你倍感轻松，并让客户跟着您的节奏走！</p>
+
+<p>大家可以根据自己的情况作些改变， 做出一份属于自己的邮件列表吧！会让你在跟进客户的时候省时省力！</p>
+
+
+<ul>
+<li>1. 询问客户对报价的看法</li>
+<li>2. 追问客户的评价，求回复</li>
+<li>3. 本着小强精神，保证客户收到了报价，重发报价</li>
+<li>4. 给客户发送一封关心的信， 提醒客户注意休息，身体健康</li>
+<li>邮件详细列表待续。。。。。。</li>
+</ul>
+
+
+<p>刚给客户报价了之后一定要做到勤跟进。在第一个月最好能够跟进到十次以上， 后续就客户情况可以放缓步伐了。</p>
+<p>报完价后第一件事情就是询问客户对于我们报价的看法， 评价，并且要问几次。 很多人都知道， 有一部分客户在这个时候就会给你回复了的。</p>
+
+</span></font></div>
+
+<table style="color: #222222; font-size: 11px; border: 0px; padding: 0px; margin: 0px; width: 517px; border-collapse: collapse; font-family: Helvetica, Arial, sans-serif; background-color: #ffffff;">
+<tbody>
+<tr style="clear: both;">
+<td colspan="2" style="font-family: Helvetica, Arial, sans-serif; margin: 0px;">
+<div style="padding: 0px 10px 3px 5px;"><a href="http://www.geekerconsulting.com/emailsignature" target="_blank"><img title="GeekerConsulting.com" src="http://www.geekerconsulting.com/signature/geekersignature.jpg" alt="Geeker Consulting Signature" height="60" border="0" width="510"></a></div>
+</td>
+</tr>
+</tbody>
+</table>
