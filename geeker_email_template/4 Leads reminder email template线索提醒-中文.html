@@ -12,9 +12,9 @@ geeker: 线索跟踪提醒: ${object.name} from ${object.partner_id != False and
 <p>奇客大师（GeekerMaster）提醒您这个业务/商机至少有 5 天没有任何活动了。这里有一些信息供您参考：</p>
 
 <ul>
-<li><h3><b>线索/商机名称: ${object.name}</b></h3></li>
+<li><h2><b>线索/商机名称: ${object.name}</b></h2></li>
 <li>目前阶段: ${object.stage_id.name}</li>
-<li>成功概率: ${object.probability}</li>
+<li>成功概率: ${object.probability}%</li>
 <li><b>下一动作: ${object.date_action}</b></li>
 <li>计划动作: ${object.title_action}</li>
 

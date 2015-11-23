@@ -1,0 +1,83 @@
+php55w php55w-bcmath php55w-channel-phpseclib php55w-cli php55w-devel php55w-gd php55w-ldap php55w-mbstring php55w-mcrypt php55w-mysql php55w-pdo php55w-pear php55w-pecl-apc php55w-pecl-igbinary php55w-pecl-memcache php55w-pecl-redis php55w-pgsql php55w-php-gettext php55w-phpseclib php55w-phpseclib-crypt-aes php55w-phpseclib-crypt-base php55w-phpseclib-crypt-random php55w-phpseclib-crypt-rijndael php55w-process php55w-recode php55w-symfony-class-loader php55w-symfony-common php55w-tcpdf php55w-tcpdf-dejavu-sans-fonts php55w-tidy php55w-xml php55wMyAdmin php55wPgAdmin
+
+
+yum -y update
+rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
+yum -y remove php-common-5.3.3-40.el6_6.x86_64
+yum -y install php55w php55w-opcache
+yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php55w-intl php55w-mbstring php55w-bcmath
+yum -y update
+
+
+No package php55w-channel-phpseclib available.
+No package php55w-pecl-apc available.
+No package php55w-php-gettext available.
+No package php55w-phpseclib available.
+No package php55w-phpseclib-crypt-aes available.
+No package php55w-phpseclib-crypt-base available.
+No package php55w-phpseclib-crypt-random available.
+No package php55w-phpseclib-crypt-rijndael available.
+No package php55w-symfony-class-loader available.
+No package php55w-symfony-common available.
+No package php55w-tcpdf available.
+No package php55w-tcpdf-dejavu-sans-fonts available.
+No package php55wMyAdmin available.
+No package php55wPgAdmin available.
+
+
+php-channel-phpseclib php-pecl-apc php-php-gettext php-phpseclib php-phpseclib-crypt-aes php-phpseclib-crypt-base php-phpseclib-crypt-random php-phpseclib-crypt-rijndael php-symfony-class-loader php-symfony-common php-tcpdf php-tcpdf-dejavu-sans-fonts phpMyAdmin phpPgAdmin
+
+Dependencies Resolved
+
+==================================================================================================================
+ Package                             Arch          Version                                   Repository      Size
+==================================================================================================================
+Removing:
+ php-common                          x86_64        5.4.45-2.el6.remi                         @remi          7.0 M
+Removing for dependencies:
+ php                                 x86_64        5.4.45-2.el6.remi                         @remi          9.4 M
+ php-bcmath                          x86_64        5.4.45-2.el6.remi                         @remi           84 k
+ php-channel-phpseclib               noarch        1.3-1.el6.remi                            @remi          886  
+ php-cli                             x86_64        5.4.45-2.el6.remi                         @remi           12 M
+ php-devel                           x86_64        5.4.45-2.el6.remi                         @remi          8.1 M
+ php-gd                              x86_64        5.4.45-2.el6.remi                         @remi          665 k
+ php-ldap                            x86_64        5.4.45-2.el6.remi                         @remi          119 k
+ php-mbstring                        x86_64        5.4.45-2.el6.remi                         @remi          2.5 M
+ php-mcrypt                          x86_64        5.4.45-2.el6.remi                         @remi           86 k
+ php-mysql                           x86_64        5.4.45-2.el6.remi                         @remi          452 k
+ php-pdo                             x86_64        5.4.45-2.el6.remi                         @remi          348 k
+ php-pear                            noarch        1:1.9.4-4.el6                             @base          2.2 M
+ php-pecl-apc                        x86_64        3.1.15-0.4.20130912.el6.remi.5.4          @remi          459 k
+ php-pecl-igbinary                   x86_64        1.2.1-1.el6.remi.5.4                      @remi          108 k
+ php-pecl-memcache                   x86_64        3.0.8-2.el6.remi.5.4                      @remi          336 k
+ php-pecl-redis                      x86_64        2.2.7-1.el6.remi.5.4                      @remi          659 k
+ php-pgsql                           x86_64        5.4.45-2.el6.remi                         @remi          318 k
+ php-php-gettext                     noarch        1.0.11-12.el6                             @epel           57 k
+ php-phpseclib                       noarch        2.0.0-4.el6.remi                          @remi          1.1 M
+ php-phpseclib-crypt-aes             noarch        1.0.0-1.el6.remi                          @remi          7.8 k
+ php-phpseclib-crypt-base            noarch        1.0.0-1.el6.remi                          @remi          100 k
+ php-phpseclib-crypt-random          noarch        1.0.0-1.el6.remi                          @remi           16 k
+ php-phpseclib-crypt-rijndael        noarch        1.0.0-1.el6.remi                          @remi           49 k
+ php-process                         x86_64        5.4.45-2.el6.remi                         @remi          128 k
+ php-recode                          x86_64        5.4.45-2.el6.remi                         @remi           16 k
+ php-symfony-class-loader            noarch        2.7.5-2.el6.remi                          @remi           60 k
+ php-symfony-common                  noarch        2.7.5-2.el6.remi                          @remi          370 k
+ php-tcpdf                           noarch        6.2.11-1.el6                              @epel           11 M
+ php-tcpdf-dejavu-sans-fonts         noarch        6.2.11-1.el6                              @epel          1.5 M
+ php-tidy                            x86_64        5.4.45-2.el6.remi                         @remi           98 k
+ php-xml                             x86_64        5.4.45-2.el6.remi                         @remi          626 k
+ phpMyAdmin                          noarch        4.4.15-1.el6.remi                         @remi           22 M
+ phpPgAdmin                          noarch        5.1-1.rhel6                               @pgdg93        3.0 M
+
+Transaction Summary
+==================================================================================================================
+Remove       34 Package(s)
+
+
+Transaction Summary
+==================================================================================================================
+Remove       34 Package(s)
+
+Installed size: 85 M
+
+ php php-bcmath php-channel-phpseclib php-cli php-devel php-gd php-ldap php-mbstring php-mcrypt php-mysql php-pdo php-pear php-pecl-apc php-pecl-igbinary php-pecl-memcache php-pecl-redis php-pgsql php-php-gettext php-phpseclib php-phpseclib-crypt-aes php-phpseclib-crypt-base php-phpseclib-crypt-random php-phpseclib-crypt-rijndael php-process php-recode php-symfony-class-loader php-symfony-common php-tcpdf php-tcpdf-dejavu-sans-fonts php-tidy php-xml phpMyAdmin phpPgAdmin
