@@ -7,7 +7,7 @@ org: Reminder on Lead: ${object.id} from ${object.partner_id != False and object
 geeker: 线索跟踪提醒: ${object.name} from ${object.partner_id != False and object.partner_id.name or object.contact_name}
  -->
 
-<p>${object.user_id.name}，</p>
+<p>Dear ${object.user_id.name},</p>
 
 <p>奇客大师（GeekerMaster）提醒您这个业务/商机至少有 5 天没有任何活动了。这里有一些信息供您参考：</p>
 
